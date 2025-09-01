@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -10,58 +9,49 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Chosen Palette: Modern Neutral (Beige, Off-Black, Deep Grey) with Orange accents -->
-<!-- Application Structure Plan: The SPA is a single-page, vertical narrative designed to guide the user through a strategic argument. It starts by defining the core challenge, then presents our general framework for addressing it, and concludes by showcasing the team's specific expertise. This approach prioritizes the "how" over the "what," building trust by demonstrating a clear, repeatable process without revealing specific creative concepts. The use of tabs and a timeline chart breaks down complex information into digestible, interactive segments. -->
-<!-- Visualization & Content Choices: 
-        - The Challenge: Info -> Goal: Define/Problem-solve -> Presentation: Side-by-side text blocks -> Interaction: Static -> Justification: Clearly frames the problem of brand-building with limited communication, establishing our core expertise.
-        - Strategic Approach: Info -> Goal: Organize/Inform -> Presentation: Interactive tabs -> Interaction: Click to reveal general strategic pillars -> Justification: Abstracts the creative approach into three core principles, showcasing our thought process while keeping specific ideas confidential.
-        - Execution Framework: Info -> Goal: Organize/Change -> Presentation: 3-step diagram and a timeline bar chart -> Interaction: Chart tooltips -> Justification: Visually represents our methodical, data-driven process. The chart (Chart.js/Canvas) provides a transparent overview of the project timeline.
-        - The Team: Info -> Goal: Build Credibility -> Presentation: Profile cards with brief bios and images -> Interaction: Static -> Justification: Directly addresses the user's request to highlight specific, impressive credentials for both team members, building confidence through a clean, professional display.
-        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7f5ef;
-            color: #2e2e2e;
-            text-align: justify;
-        }
-        .active-tab {
-            background-color: #333;
-            color: #fff;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f7f5ef;
+        color: #2e2e2e;
+        text-align: justify;
+    }
+    .active-tab {
+        background-color: #333;
+        color: #fff;
+    }
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 400px;
+    }
+    @media (min-width: 768px) {
         .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
+            height: 350px;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .mission-text {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            line-height: 1.1;
-        }
-    </style>
+    }
+    .mission-text {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.1;
+    }
+</style>
 <style>
     body {
         background-image: url('https://mistralaichatupprodswe.blob.core.windows.net/chat-images/21/56/6f/21566f6e-7640-4f48-ad9d-ac9e75ffc2a9/27bf9d93-8223-49b7-9134-b26e691fcaf0/f1cf3c7a-4125-4f0f-a6cd-20d01f1e98f1?sv=2025-01-05&st=2025-09-01T13%3A34%3A06Z&se=2025-09-01T14%3A34%3A06Z&sr=b&sp=rade&sig=8WP5uj7pJ%2B270%2B00fNMQy8gzuSGuRxzIPnWNhZUCakc%3D');
         background-size: cover;
         background-attachment: fixed;
     }
-    
+
     section {
         border: 2px solid #333;
         border-radius: 10px;
@@ -70,10 +60,17 @@
         margin: 20px;
         background-color: rgba(255, 255, 255, 0.9);
     }
+    .fixed-banner h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+    .fixed-banner nav a {
+        font-weight: 500;
+    }
 </style>
 </head>
 <body class="antialiased">
-
 <div class="fixed-banner">
 <h1>Proposal for a Research Lab</h1>
 <nav>
@@ -84,29 +81,24 @@
 </nav>
 </div>
 <style>
-        .fixed-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(247, 245, 239, 0.95);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #ccc;
-        }
-        .fixed-banner h1 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-        .fixed-banner nav {
-            display: flex;
-            gap: 1rem;
-        }
-    </style>
-
+    .fixed-banner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(247, 245, 239, 0.95);
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid #ccc;
+    }
+    .fixed-banner nav {
+        display: flex;
+        gap: 1rem;
+    }
+</style>
 <header class="absolute top-0 left-0 right-0 z-50" id="header">
 <div class="container mx-auto px-6 py-3 flex justify-between items-center text-white">
 <h1 class="text-lg font-bold">Proposal for a Research Lab</h1>
@@ -195,12 +187,12 @@
 <h3 class="text-4xl font-bold mb-16 text-center">Our Team</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <div>
-<img alt="Fred Volhuer" class="rounded-lg mb-6" height="400" src="https://mistralaichatupprodswe.blob.core.windows.net/chat-images/21/56/6f/21566f6e-7640-4f48-ad9d-ac9e75ffc2a9/27bf9d93-8223-49b7-9134-b26e691fcaf0/8fdc9df6-3b20-4259-b097-b12d994cb542?sv=2025-01-05&amp;st=2025-09-01T13%3A01%3A45Z&amp;se=2025-09-01T14%3A01%3A45Z&amp;sr=b&amp;sp=rade&amp;sig=luoF6onuHP7QkIhPnXqfv2mJRGf65ufi6ArFvst7MhQ%3D" width="400"/>
+<img alt="Fred Volhuer" class="rounded-lg mb-6" height="400" src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/02ae/1cc1/-2e8/3-4e34-bc85-96cf62860d6b/image.jpg?se=2025-09-01T15%3A30%3A34Z&sp=r&sv=2025-07-05&sr=b&sig=P66DrG1hM46CiJ6zgTjF6pRob1ewf7ot0X0CdBHB0S8%3D" width="400"/>
 <h4 class="text-2xl font-bold mb-2">Fred Volhuer</h4>
 <p class="text-stone-600">A seasoned entrepreneur and recognized leader in spatial computing with over 8 years of experience building and scaling a category-leading content creation, financing, and distribution company. Expertise in driving product strategy, content development, and global marketing campaigns for premium linear and interactive experiences, including augmented and virtual reality apps, videogame and GenAI pieces of content. Proven ability to forge strategic partnerships with tech giants and entertainment leaders to deliver award-winning interactive content for emerging platforms. Pioneered experiments with Generative AI through collaborations with key industry players (OpenAI, Runway, Google) and expanded thought leadership into robotics and 'Artificial Presences'. Looking to apply extensive industry expertise in the innovative possibilities presented by GenAI, and robotics in the next phase of my career.</p>
 </div>
 <div>
-<img alt="Magda Domagała" class="rounded-lg mb-6" height="400" src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/56be/bb56/-057/f-4b11-9704-5bea8230b1a7/image.jpg?se=2025-09-01T14%3A08%3A10Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=eYuJCQPKlZweOJRSJyNESZWaayjp3Fa3zAi8h8te26o%3D" width="400"/>
+<img alt="Magda Domagała" class="rounded-lg mb-6" height="400" src="https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/bb5d/6e28/-f5e/7-4f89-bd6f-aaf88b503bca/image.jpg?se=2025-09-01T15%3A33%3A48Z&sp=r&sv=2025-07-05&sr=b&sig=wBAuWYyphS/hBS/i2SY9tkr4lAR8kHAttspl/ZLYRPk%3D" width="400"/>
 <h4 class="text-2xl font-bold mb-2">Magda Domagała</h4>
 <p class="text-stone-600">Magda is a highly skilled strategist and researcher with extensive experience with global brands like <b>Xbox</b>, <b>TikTok</b>, and <b>Google</b>. Her expertise lies in applying a critical, analytical lens to creative challenges. She uses deep qualitative research and consumer insights to ensure that brand strategies are not just conceptually strong but also deeply rooted in an understanding of the market and the specific audience we need to reach. Her work is the critical link between creative vision and actionable, data-driven execution.</p>
 </div>
@@ -214,84 +206,84 @@
 </div>
 </footer>
 <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const ctx = document.getElementById('timelineChart').getContext('2d');
-            const timelineChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Insight Sprint', 'CX Action Mapping', 'Design & Test'],
-                    datasets: [
-                        {
-                            label: 'Insight Sprint',
-                            data: [{x: [0, 6], y: 'Insight Sprint'}],
-                            backgroundColor: '#57534E',
-                            borderColor: '#57534E',
-                            borderWidth: 1,
-                            barThickness: 30
-                        },
-                        {
-                            label: 'CX Action Mapping',
-                            data: [{x: [3, 7], y: 'CX Action Mapping'}],
-                            backgroundColor: '#403d39',
-                            borderColor: '#403d39',
-                            borderWidth: 1,
-                            barThickness: 30
-                        },
-                        {
-                            label: 'Design & Test',
-                            data: [{x: [5, 13], y: 'Design & Test'}],
-                            backgroundColor: '#2e2e2e',
-                            borderColor: '#2e2e2e',
-                            borderWidth: 1,
-                            barThickness: 30
-                        }
-                    ]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            min: 0,
-                            max: 13,
-                            title: {
-                                display: true,
-                                text: 'Weeks'
-                            },
-                            grid: {
-                                display: false
-                            },
-                            ticks: {
-                                stepSize: 1
-                            }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            grid: {
-                                display: false
-                            }
-                        }
+    document.addEventListener('DOMContentLoaded', function () {
+        const ctx = document.getElementById('timelineChart').getContext('2d');
+        const timelineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Insight Sprint', 'CX Action Mapping', 'Design & Test'],
+                datasets: [
+                    {
+                        label: 'Insight Sprint',
+                        data: [{x: [0, 6], y: 'Insight Sprint'}],
+                        backgroundColor: '#57534E',
+                        borderColor: '#57534E',
+                        borderWidth: 1,
+                        barThickness: 30
                     },
-                    plugins: {
-                        legend: {
+                    {
+                        label: 'CX Action Mapping',
+                        data: [{x: [3, 7], y: 'CX Action Mapping'}],
+                        backgroundColor: '#403d39',
+                        borderColor: '#403d39',
+                        borderWidth: 1,
+                        barThickness: 30
+                    },
+                    {
+                        label: 'Design & Test',
+                        data: [{x: [5, 13], y: 'Design & Test'}],
+                        backgroundColor: '#2e2e2e',
+                        borderColor: '#2e2e2e',
+                        borderWidth: 1,
+                        barThickness: 30
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        min: 0,
+                        max: 13,
+                        title: {
+                            display: true,
+                            text: 'Weeks'
+                        },
+                        grid: {
                             display: false
                         },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    const label = context.dataset.label;
-                                    const start = context.parsed.x[0];
-                                    const end = context.parsed.x[1];
-                                    const duration = end - start;
-                                    return label + ': ' + duration + ' weeks (Starts at Week ' + start + ')';
-                                }
+                        ticks: {
+                            stepSize: 1
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label;
+                                const start = context.parsed.x[0];
+                                const end = context.parsed.x[1];
+                                const duration = end - start;
+                                return label + ': ' + duration + ' weeks (Starts at Week ' + start + ')';
                             }
                         }
                     }
                 }
-            });
+            }
         });
-    </script>
+    });
+</script>
 </body>
 </html>
